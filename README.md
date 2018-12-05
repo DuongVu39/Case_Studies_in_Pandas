@@ -38,14 +38,14 @@ Showing the students to creates different types of plot showing how bad was the 
 
 Thinking of narrowing the story but don't know what to do. Thinking of showing the student how to calculate some statistical number/ financial criteria/ doing data engineering.
 
-- Lesson 3.1 -  Looking at a particular company stock price maybe to calculate a ratio?
-  - A learning objective: 
-- Lesson 3.2 - Creating a function to calculate that ratio for several company? 
-  - A learning objective: 
-- Lesson 3.3 - Feature engineering? 
-  - A learning objective: 
-- Lesson 3.4 - 
-  - A learning objective: 
+- Lesson 3.1 -  Looking at a particular company stock price in the dataset
+  - A learning objective: Learn how to work with time series dataset and create a stock price chart.
+- Lesson 3.2 - Creating a function to calculate Sharpe ratio for the chosen company.
+  - A learning objective: Learn/ review how to construct function 
+- Lesson 3.3 -  Generalize the use of function for several company
+  - A learning objective: Use the function created above to other company using `.apply` for the whole data frame
+- Lesson 3.4 - Other metrics
+  - A learning objective: Creating another function to calculate other risk adjusted return metrics with less hand holding code
 
 #### Chapter 4 - The consequences and how it changes America's economy
 
