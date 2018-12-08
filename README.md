@@ -6,11 +6,10 @@ Going into generating a report on The Great Recession
 
 ### **Looking Back: A decade after the Great Recession?**
 
-A general slowdown in economic activity, a downturn in the business  cycle, a reduction in the amount of goods and services produced and  sold—these are all characteristics of a recession.
-
+Recession is defined by the [National Bureau of Economic Research](http://www.nber.org/) (NBER)  as "a significant decline in economic activity spread across the economy, lasting more than a few months, normally visible in real gross domestic product (GDP), real income, employment, industrial production and wholesale-retail sales."
   ![](assets/recession.jpeg)   
 
-According to the [National Bureau of Economic Research](http://www.nber.org/) (the official arbiter of  U.S. recessions), there were [10 recessions](http://www.nber.org/cycles/)  between 1948 and 2018.  The most recent recession began in December  2007 and ended in June 2009, though many of the statistics that describe  the U.S. economy have yet to return to their pre-recession values.
+According to NBER (the official arbiter of  U.S. recessions), there were [10 recessions](http://www.nber.org/cycles/) between 1948 and 2018. The most recent recession began in December 2007 and ended in June 2009, many of the statistics that describe the U.S. economy have yet to return to their pre-recession values.
 
 #### Chapter 1 - Where is all the data? A review of previous pandas courses.
 
