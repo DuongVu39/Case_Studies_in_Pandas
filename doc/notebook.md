@@ -66,47 +66,56 @@ Please  submit a complete course outline. Please provide the title of each  chap
 
 **Looking Back: A decade after the Great Recession?**
 
-#### Chapter 1 - Where are all the data? A review of previous pandas courses.
+
+
+#### Chapter 1 - Where is all the data? A review of previous pandas courses.
 
 - Lesson 1.1 - Getting all the data in the same places
-  - A learning objective: Importing several data frames into one platform using function `pd.read_csv`, `pd.read_excel`
+  - Learning objective: Importing several data frames into one platform using functions `pd.read_csv`, `pd.read_excel`
 - Lesson 1.2 - Manipulating multiple data frames
-  - A learning objective: Merging several data frames based on different conditions.
+  - Learning objective: Clean & merge several data frames based on different conditions (`stack`, `pivot`, `merge`, `pd.concat`, `join`)
 - Lesson 1.3 - EDA (statistical and graphical methods)
-  - A learning objective: Getting some basic statistical information from the importing data (filtering, indexing, apply, grouping)
+  - Learning objective: Getting some basic summary statistic information from the imported data (proper pandas indexing `.loc`/`.iloc`, `.apply`, `.map`)
 
-#### Chapter 2 - How bad was The Great Depression?
+#### Chapter 2 - How bad was The Great Recession?
 
-- Lesson 2.1 - Introduction to IPEDS Data 
-  - A learning objective: Create a map step-by-step to gain a better understanding of how your data will dictate the map you create.
-- Lesson 2.2 - Mapping California Colleges 
-  - A learning objective: Pan and plot a point on a map using the IPEDS case study.
-- Lesson 2.3 - Labels and Pop-ups 
-  - A learning objective: Center, zoom in, and plot points on the IPEDS map.
-- Lesson 2.4 - Color Coding Colleges 
-  - A learning objective: Enhance the appearance of the IPEDS map by  changing the color palette of the markers and adding a map legend.
+Showing the students to create different types of plots highlighting how bad the Great Recession was.  
+
+- Lesson 2.1 - Unemployment rates among States
+  - A learning objective: Learning to use matplotlib to plot unemployment rate on the US map.
+- Lesson 2.2 - Unemployment rates around the world
+  - A learning objective: Practicing `filter` function to compare US unemployment rates with 3 other countries of student's interest.
+- Lesson 2.3 - Consequences on different industries
+  - A learning objective: Learning to create a grouped bar chart to compare different industries in different periods (`groupby`, pandas plot)
+- Lesson 2.4 - Establishment Births and Deaths Rate
+  - A learning objective: Creating area plot represent birth and death rate before and after the recession.
 
 #### Chapter 3 - The laser focus - Creating your own version of this analysis
 
-- Lesson 3.1 - The Leaflet Extras Package 
-  - A learning objective: Add search capabilities to your map! Find a  location by typing it in a search bar, plus find the name of a location  by clicking on a point in your map.
-- Lesson 3.2 - Overlay Groups 
-  - A learning objective: Clarify how your data is distributed by adding toggles to group data on your map.
-- Lesson 3.3 - Base Groups 
-  - A learning objective: Give your user control over their view by adding toggles between base maps.
-- Lesson 3.4 - Pieces of Flair 
-  - A learning objective: Create an advanced and searchable map using special features like clustering.
+Thinking of narrowing the story but don't know what to do. Thinking of showing the student how to calculate some statistical number/ financial criteria/ doing data engineering.
 
-#### Chapter 4 - The consequences and how it changes America's economy
+- Lesson 3.1 -  Looking at stock price by segment, over this period. Select a particular stock.
+  - A learning objective: Learning how to work with time series dataset and create a stock price chart.
+- Lesson 3.2 - Fundamental analysis, perform a DCF analysis based on past 5y financials
+  - A learning objective: Learning how to construct a function to calculate DCF (could compare 'theoretical value' with the actual value due to recession)
+- Lesson 3.3 - Feature engineering?
+  - A learning objective: Learning about MACD and STO technical indicators
+- Lesson 3.4 - Comparing these strategies: Technical vs. Fundamental valuation.
+  - A learning objective: Generalizing the use of function for several company using `.apply` for the whole data frame
 
-- Lesson 4.1 - Spatial Data 
-  - A learning objective: Define your map boundaries by performing a spatial join.
-- Lesson 4.2 - Mapping Polygons 
-  - A learning objective: Perform exploratory data analysis using polygons to examine data missingness.
-- Lesson 4.3 - Putting it All Together 
-  - A learning objective: Use interactive web maps to explore and understand the properties of data.
+#### Chapter 4 - The consequences and how it changed America's economy
 
+- Lesson 4.1 - It took nearly a decade for America to get back they were before TGR
 
+  - A learning objective:  Plotting median income before and 10 years after TGR. (learning to save plot as image file for report)
+
+  Lesson 4.2 - Homeownership 10 years before and after TGR
+
+  - A learning objective: Creating pivot table using homeownership data (2 methods using `groupby` or `pd.pivot_table`)
+
+- Lesson 4.3 - Putting them all together: Young people are more reluctant to own a house
+
+  - A learning objective: Creating a trend line based on the data
 
 ## Step 4: Final Chapter Exercise
 
@@ -122,7 +131,45 @@ Please  submit your course's final exercise below. You must include context  (th
 
 #### Exercise
 
+```python
+## Step 1: Setting the index
+new_df.index= __._____(__.__)
+
+## Step2: Plotting the trend line
+fig, ax = plt.subplots(figsize=(15,5))
+new_df[__[__] == ___].plot(style='*-', color='orange', ax=ax)
+ax.axvline(37, color='cornflowerblue', lw=60, alpha=0.5)
+plt.text(37, 15000, "Recession Time", rotation=90, verticalalignment='center', fontsize=15)
+plt.title(___)
+plt.ylabel(___)
+plt.xlabel(___);
+```
+
+#### Result:
+
+![](../assets/homeownership_young_adult.png)
+
 #### Instructions
 
+Creating a trend line for number of household owned by people under 25 during the 20 years period from 1998 to 2018. 
+
+- To plot timeseries, set index of the data frame as the Year column. (Remember to turn the column into date time object by wrapping the whole column inside pandas `to_datetime` function)
+- To plot the trend line for young adult only, filter `Age range` column to get only young adult (under 30). 
+- Then plotting a shaded bloc from 2006 to 2008, around recession time. This part has been done for you.
+- Every plot will need a valid title and label for its x axis and y axis.
+  - Use: 'Number of household with homeowner under 25 year old' for the title 
+  - 'Number of household' and 'Year' for y and x axis
+
 #### Solution code
+
+```Python
+new_df.index= pd.to_datetime(new_df.Year)
+fig, ax = plt.subplots(figsize=(15,5))
+new_df[new_df['Age range']=='Young adult (under 30)'].plot(style='*-', color='orange', ax=ax)
+ax.axvline(37, color='cornflowerblue', lw=60, alpha=0.5)
+plt.text(37, 15000, "Recession Time", rotation=90, verticalalignment='center', fontsize=15)
+plt.title('Number of household with homeowner under 25 year old')
+plt.ylabel('Number of household')
+plt.xlabel('Year');
+```
 
