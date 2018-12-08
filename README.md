@@ -30,7 +30,7 @@ Showing the students to create different types of plots highlighting how bad the
   - A learning objective: Practicing `filter` function to compare US unemployment rates with 3 other countries of student's interest.
 - Lesson 2.3 - Consequences on different industries
   - A learning objective: Learning to create a grouped bar chart to compare different industries in different periods (`groupby`, pandas plot)
-- Lesson 2.4 - Establishment Births and Deaths ### NEED TO CLEAR THIS UP ###
+- Lesson 2.4 - Establishment Births and Deaths Rate
   - A learning objective: Creating area plot represent birth and death rate before and after the recession.
 
 #### Chapter 3 - The laser focus - Creating your own version of this analysis
@@ -51,12 +51,18 @@ Thinking of narrowing the story but don't know what to do. Thinking of showing t
 Thinking of teaching students to maybe automate the whole process by creating pipeline? Or maybe predicting/ creating alert of recession?
 Think maybe focusing on developing a report about the fundamental economic data would be good here. As you mentioned, recreating the BLS' report could be a start, could make comparisons between data in 2008 and today. Need to be careful about doing too much in the time you have available. You want the lesson to be one coherent story.
 
-- Lesson 4.1 - PDF reports with pandas, jinja, reports packages. (ideally, you'd use jupyter though).
-  - A learning objective: Learn how to generate PDF with pandas
-- Lesson 4.2 -
-  - A learning objective:
-- Lesson 4.3 - Putting it All Together
-  - A learning objective:
+- Lesson 4.1 - It took nearly a decade for America to get back they were before TGR
+
+  - A learning objective:  Plotting median income before and 10 years after TGR. (learning to save plot as image file for report)
+
+  Lesson 4.2 - Homeownership 10 years before and after TGR
+
+  - A learning objective: Creating pivot table using homeownership data (2 methods using `groupby` or `pd.pivot_table`)
+
+- Lesson 4.3 - Putting them all together: Young people are more reluctant to own a house
+
+  - A learning objective: Creating a trend line based on the data
+
 
 References:
 
